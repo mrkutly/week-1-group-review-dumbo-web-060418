@@ -1,12 +1,14 @@
 # Finish the implementation of the Car class so it has the functionality described below
+require 'pry'
 
 class Car
 
   attr_accessor :make, :model
   @@all = []
 
-  def initialize(make = make, model = model)
-
+  def initialize(args)
+    @make = args[:make]
+    @model = args[:model]
     @@all << self
   end
 
@@ -20,19 +22,19 @@ class Car
 
 end
 
-car = Car.new("volvo", "lightening")
-puts car.make
+#car = Car.new("volvo", "lightening")
+#puts car.make
 #=> "volvo"
-puts car.model
+#puts car.model
 #=> "lightening"
 
-puts car.drive
+#puts car.drive
 # => "VROOOOOOOOOOOOM!"
 
-puts Car.all
+#puts Car.all
 #=> [car1, car2, car3]
 
-puts "_________"
+#puts "_________"
 
 #BONUS:
 
@@ -42,3 +44,5 @@ puts car2.make
 #=> "volvo"
 puts car2.model
 #=> "ligthening"
+
+binding.pry
